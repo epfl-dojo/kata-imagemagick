@@ -1,4 +1,9 @@
-# FFMpeg and ImageMagick
+% — EPFL Dojo — \
+  ImageMagick
+% Giovanni Cangiani <giovanni.cangiani@epfl.ch>
+% 2020-06-25
+
+# ImageMagick
 
 ## Ideas
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
@@ -17,10 +22,12 @@ options with `+` and `-` have differen mening. Example:
  - `-append` attach image below
  - `+append` attach image on the right
 
- 
+---
+
 ### miff images
  - is the internal IM storage and can hold several images
 
+---
 
 ### Commands
  * identify (`identify [-verbose] file.png` is equivalent to `convert [-verbose] file.png info:-`)
@@ -30,6 +37,7 @@ options with `+` and `-` have differen mening. Example:
  * montage
  * display (X11 only)
 
+---
 
 ```
 PresentazioneFFMpegImageMagick % convert -list interpolate     
