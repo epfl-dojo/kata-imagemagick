@@ -20,6 +20,18 @@ https://imagemagick.org | https://github.com/imagemagick/imagemagick
 https://en.wikipedia.org/wiki/ImageMagick#cite_note-exploits-ars-technica-5
 
 ---
+
+# History
+
+> ImageMagick was created in 1987 by John Cristy when working at DuPont, to
+convert 24-bit images (16 million colors) to 8-bit images (256 colors), so they
+could be displayed on most screens. It was freely released in 1990 when DuPont
+agreed to transfer copyright to ImageMagick Studio LLC, still currently the
+project maintainer organization.
+
+https://en.wikipedia.org/wiki/ImageMagick#History
+
+---
 ## Ideas
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
  * Web gallery in bash with image overlay and exif info
