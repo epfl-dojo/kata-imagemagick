@@ -32,6 +32,20 @@ project maintainer organization.
 https://en.wikipedia.org/wiki/ImageMagick#History
 
 ---
+
+# Features and Capabilities
+
+   * [File format conversion](https://imagemagick.org/script/convert.php)
+   * [Animation](https://imagemagick.org/Usage/anim_basics/)
+   * [Color management](https://imagemagick.org/script/color-management.php)
+   * [Command-line processing](https://imagemagick.org/script/command-line-processing.php)
+   * [Montage](https://imagemagick.org/script/montage.php)
+   * [Special effects](https://imagemagick.org/Usage/blur/)
+   * [Text & comments](https://imagemagick.org/Usage/text/)
+   * and much more...
+
+---
+
 ## Ideas
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
  * Web gallery in bash with image overlay and exif info
