@@ -47,6 +47,7 @@ https://en.wikipedia.org/wiki/ImageMagick#History
 ---
 
 ## Ideas
+
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
  * Web gallery in bash with image overlay and exif info
  * FFmpeg pipes: multiple output with one input 
@@ -65,12 +66,14 @@ options with `+` and `-` have differen mening. Example:
 
 ---
 
-### miff images
+## miff images
+
  - is the internal IM storage and can hold several images
 
 ---
 
-### Commands
+## Commands
+
  * identify (`identify [-verbose] file.png` is equivalent to `convert [-verbose] file.png info:-`)
  * convert (magick)
  * compare

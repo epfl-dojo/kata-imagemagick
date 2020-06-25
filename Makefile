@@ -32,4 +32,6 @@ readme_reveal.html: README.md
 		--variable  slideNumber=true \
 		--variable     progress=true \
 		--variable        theme=night \
+		--variable        width=1600 \
+		--variable        height=700 \
 		-o $@
