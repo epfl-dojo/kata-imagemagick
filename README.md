@@ -46,6 +46,32 @@ https://en.wikipedia.org/wiki/ImageMagick#History
 
 ---
 
+# Commands
+
+![](./img/ImageMagick-logo.png)
+
+----
+
+## Crop
+
+```
+convert MM.jpg -gravity North -crop 200x200+0+0 +repage MM_square.jpg
+```
+
+----
+
+## Crop - Before
+
+![](./img/MarilynMonroe.jpg)
+
+----
+
+## Crop - After
+
+![](./img/01_square_marilyn.jpg)
+
+---
+
 ## Ideas
 
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
