@@ -4,7 +4,8 @@
 
 cd images
 # curl -o OriginalWarhol.jpg http://quintessentially.com/assets/noted/01_8.jpg
-curl -o --progress-bar MarilynMonroe.jpg https://upload.wikimedia.org/wikipedia/commons/4/46/Marilyn_Monroe_in_1952_TFA.jpg
+curl -L --progress-bar  -o MarilynMonroe.jpg  https://upload.wikimedia.org/wikipedia/commons/4/46/Marilyn_Monroe_in_1952_TFA.jpg
+curl -L --progress-bar  -o dojoman.png https://gitlab.com/epfl-dojo/dojo-design/-/raw/master/dojoman/dojoman.png
 
 cd gallery
 curl -LOJ --progress-bar "https://unsplash.com/photos/96--kK-c5KY/download?force=true"

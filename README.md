@@ -1,7 +1,10 @@
-% — EPFL Dojo — \
+---
+author: Giovanni Cangiani <<giovanni.cangiani@epfl.ch>>
+title: — EPFL Dojo — \
   ImageMagick
-% Giovanni Cangiani <<giovanni.cangiani@epfl.ch>>
-% 2020-06-25
+date: 2020-06-25
+---
+
 
 # ImageMagick
 
@@ -177,6 +180,7 @@ options with `+` and `-` have differen mening. Example:
  * identify (`identify [-verbose] file.png` is equivalent to `convert [-verbose] file.png info:-`)
  * convert (magick)
  * compare
+ * composite
  * mogrify
  * montage
  * display (X11 only)
