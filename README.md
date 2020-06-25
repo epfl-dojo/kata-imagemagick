@@ -10,6 +10,16 @@
 https://imagemagick.org | https://github.com/imagemagick/imagemagick
 
 ---
+
+# About
+
+> ImageMagick is a free and open-source software suite for displaying,
+  creating, converting, modifying, and editing raster images. It can read and
+  write over 200 image file formats.
+
+https://en.wikipedia.org/wiki/ImageMagick#cite_note-exploits-ars-technica-5
+
+---
 ## Ideas
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
  * Web gallery in bash with image overlay and exif info
