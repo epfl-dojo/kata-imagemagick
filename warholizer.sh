@@ -1,6 +1,6 @@
 #!/bin/sh
 # WARHOLize the image of Marilyn Monroe with FFMpeg
-# set -x
+set -x
 
 # IM canvas and interpolation
 
@@ -29,7 +29,7 @@ xcrgbs() {
 	shift 1
 	count="count=3"
 	curl -k "http://www.thecolorapi.com/scheme?$color&$mode&$count&format=json" \
-	| jq .colors[].hex.value | awk '{printf(" xc:%s", $0);}'
+	| jq .colors[].hex.value | sed 's/"//g' | awk '{printf(" xc:%s", $0);}'
 }
 
 [ -d $tmpdir ] || mkdir -p $tmpdir 
@@ -58,7 +58,7 @@ sqsize=$(identify -format "%[fx:min(w,h)]" $src)
 echo "sqsize: $sqsize"
 
 # Crop the image to obtain a square
-convert $src -gravity center -crop ${sqsize}x${sqsize}+0+0 +repage $tmpsq.jpg
+convert $src -gravity North -crop ${sqsize}x${sqsize}+0+0 +repage $tmpsq.jpg
 
 # Colorize the image a la Warhol trying various interpolation methods
 for interp in Average Average9 Bilinear Blend Catrom Integer Mesh Nearest Spline ; do
@@ -73,10 +73,11 @@ convert $tmpsq.jpg \( -clone 0 \) \( -clone 0  \) \( -clone 0 \) \
 convert $tmpsq.jpg -colorspace gray \( -clone 0 \) \( -clone 0 \) \( -clone 0  \) \( -clone 0 \) \
   -delete 0 miff:- | montage - -geometry +0+0 $tmpgr.jpg
 
+interp="Integer" # "Nearest"
 convert $tmpsq.jpg -colorspace gray \
-	\( -clone 0 \( $xc1 +append \) -interpolate Nearest -clut \) \
-	\( -clone 0 \( $xc2 +append \) -interpolate Nearest -clut \) \
-	\( -clone 0 \( $xc3 +append \) -interpolate Nearest -clut \) \
-	\( -clone 0 \( $xc4 +append \) -interpolate Nearest -clut \) \
+	\( -clone 0 \( $xc1 +append \) -interpolate $interp -clut \) \
+	\( -clone 0 \( $xc2 +append \) -interpolate $interp -clut \) \
+	\( -clone 0 \( $xc3 +append \) -interpolate $interp -clut \) \
+	\( -clone 0 \( $xc4 +append \) -interpolate $interp -clut \) \
 	-delete 0 miff:- | montage - -geometry +0+0 $dst.jpg
 
