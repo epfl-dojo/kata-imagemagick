@@ -50,6 +50,13 @@ https://en.wikipedia.org/wiki/ImageMagick#History
 
 ![](./img/ImageMagick-logo.png)
 
+# Identify
+
+```
+% identify [-verbose] MM.jpg 
+MM.jpg JPEG 300x450 300x450+0+0 8-bit sRGB 129840B 0.000u 0:00.000
+```
+
 ---
 
 # Crop
@@ -59,25 +66,51 @@ convert MM.jpg -gravity North -crop 200x200 +repage MM_square.jpg
 ```
 https://imagemagick.org/Usage/crop/
 
-
 ----
 
 ## Crop - Before
 
-![](./img/MarilynMonroe.jpg)
+![](./img/MM.jpg)
 
 ----
 
 ## Crop - After
 
-![](./img/01_square_marilyn.jpg)
+![](./img/MM_square.jpg)
 
 ---
+
+# Resize
+
+```
+
+convert MM.jpg -resize 50% MM_halfsize.jpg
+convert MM.jpg -resize "400x" MM_400stupid.jpg
+convert MM.jpg -resize "400x>" MM_400clever.jpg
+identify MM_400clever.jpg 
+
+> MM_600clever.jpg JPEG 300x450 300x450+0+0 8-bit sRGB 120472B 0.000u 0:00.000
+
+```
+
+https://imagemagick.org/Usage/resize/
+
+----
+
+## Resize - After
+
+halfsize / stupid / clever
+
+![MM_halfsize](./img/MM_halfsize.jpg)
+![MM_400stupid](./img/MM_400stupid.jpg)
+![MM_400clever](./img/MM_400clever.jpg)
+
+--- 
 
 # Montage
 
 ```
-convert MM_square.jpg \( -clone 0 \) \( -clone 0  \) \( -clone 0 \) \
+convert MM_square.jpg -clone 0 -clone 0  \( -clone 0 -channel RGB -negate \) \ 
   miff:- | montage - -geometry +0+0 MM_multiple.jpg
 ```
 https://imagemagick.org/Usage/montage/
@@ -104,15 +137,6 @@ https://imagemagick.org/www/script/color-management.php
 ![](./img/04_gray_warhol.jpg)
 
 ---
-
-## Ideas
-
- * Two more _unix power tools_: nothing is better than command line for repetitive tasks
- * Web gallery in bash with image overlay and exif info
- * FFmpeg pipes: multiple output with one input 
- * html HiHDI images @2x
- * IM filters. Worrolizer 
- * study JPEG compression
 
 options with `+` and `-` have differen mening. Example:
  - `-write` writes the image in the given format. The image will be available

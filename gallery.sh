@@ -24,21 +24,20 @@ index=tmp/gallery/index.html
 rm -f $imdir/*
 rm -f $thdir/*
 
-# i=0
-# for src in $srcdir/*.jpg ; do 
-#   sn=$(printf "%03d" $i)
-#   echo "$src -> $sn"
-#   let i=$i+1
-#   # Use write to avoid reading the original image twice:
-#   convert $src \( +clone -resize 800x -write $imdir/$sn.jpg +delete \) \
-#         -thumbnail 100x100^ -gravity center -extent 100x100  $thdir/$sn.png 
-# done
-
-convert $srcdir/*.jpg -resize    800x $imdir/%03d.jpg
+watemark="-pointsize 24 -fill black -annotate +621+32 unsplash.com -fill white -annotate +620+32 unsplash.com" 
+i=0
+for src in $srcdir/*.jpg ; do 
+  sn=$(printf "%03d" $i)
+  echo "$src -> $sn"
+  let i=$i+1
+  # Use write to avoid reading the original image twice:
+  convert $src \( +clone -resize 800x $watemark -write $imdir/$sn.jpg +delete \) \
+          -thumbnail 100x100^ -gravity center -extent 100x100  $thdir/$sn.png 
+done
 
 # cut the image to fit 100x100 thumbnail
-convert -define jpeg:size=200x200 $srcdir/*.jpg  -thumbnail 100x100^ \
-        -gravity center -extent 100x100  $thdir/%03d.png
+# convert -define jpeg:size=200x200 $srcdir/*.jpg  -thumbnail 100x100^ \
+#         -gravity center -extent 100x100  $thdir/%03d.png
 
 
 cat > $index << EOF
