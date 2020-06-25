@@ -74,6 +74,21 @@ https://imagemagick.org/Usage/crop/
 
 ---
 
+# Montage
+
+```
+convert MM_square.jpg \( -clone 0 \) \( -clone 0  \) \( -clone 0 \) \
+  miff:- | montage - -geometry +0+0 MM_multiple.jpg
+```
+https://imagemagick.org/Usage/montage/
+
+----
+
+## Montage - After
+
+![](./img/03_multiple_marilyn.jpg)
+
+---
 ## Ideas
 
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
