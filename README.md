@@ -1,10 +1,15 @@
 % — EPFL Dojo — \
   ImageMagick
-% Giovanni Cangiani <giovanni.cangiani@epfl.ch>
+% Giovanni Cangiani <<giovanni.cangiani@epfl.ch>>
 % 2020-06-25
 
 # ImageMagick
 
+![](./img/image-magick-wizard.jpg)
+
+https://imagemagick.org | https://github.com/imagemagick/imagemagick
+
+---
 ## Ideas
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
  * Web gallery in bash with image overlay and exif info
