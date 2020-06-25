@@ -17,7 +17,7 @@ https://imagemagick.org | https://github.com/imagemagick/imagemagick
   creating, converting, modifying, and editing raster images. It can read and
   write over 200 image file formats.
 
-https://en.wikipedia.org/wiki/ImageMagick#cite_note-exploits-ars-technica-5
+https://en.wikipedia.org/wiki/ImageMagick
 
 ---
 
