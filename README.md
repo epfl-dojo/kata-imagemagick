@@ -50,13 +50,15 @@ https://en.wikipedia.org/wiki/ImageMagick#History
 
 ![](./img/ImageMagick-logo.png)
 
-----
+---
 
-## Crop
+# Crop
 
 ```
-convert MM.jpg -gravity North -crop 200x200+0+0 +repage MM_square.jpg
+convert MM.jpg -gravity North -crop 200x200 +repage MM_square.jpg
 ```
+https://imagemagick.org/Usage/crop/
+
 
 ----
 
