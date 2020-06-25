@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 
-all: clean readme_reveal.html
+all: clean readme_reveal.html readme_beamer.pdf
 
 clean:
 	rm -f readme_beamer.pdf readme_reveal.html
@@ -29,4 +29,7 @@ readme_reveal.html: README.md
 	pandoc $< --standalone --self-contained \
 		-t revealjs \
 		--variable revealjs-url="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/" \
+		--variable  slideNumber=true \
+		--variable     progress=true \
+		--variable        theme=night \
 		-o $@
