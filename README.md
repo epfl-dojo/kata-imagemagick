@@ -89,6 +89,22 @@ https://imagemagick.org/Usage/montage/
 ![](./img/03_multiple_marilyn.jpg)
 
 ---
+
+# Black and white
+
+```
+convert MM_square.jpg -colorspace gray MM_square_gray.jpg
+```
+https://imagemagick.org/www/script/color-management.php
+
+----
+
+## Black and white - After
+
+![](./img/04_gray_warhol.jpg)
+
+---
+
 ## Ideas
 
  * Two more _unix power tools_: nothing is better than command line for repetitive tasks
