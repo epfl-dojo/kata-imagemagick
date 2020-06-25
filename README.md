@@ -50,12 +50,29 @@ https://en.wikipedia.org/wiki/ImageMagick#History
 
 ![](./img/ImageMagick-logo.png)
 
+---
+
 # Identify
 
 ```
 % identify [-verbose] MM.jpg 
 MM.jpg JPEG 300x450 300x450+0+0 8-bit sRGB 129840B 0.000u 0:00.000
 ```
+https://imagemagick.org/script/identify.php
+
+---
+
+# Compress
+
+```
+convert original.jpg -quality 10 compressed.jpg
+```
+
+----
+
+# Compress - comparison
+
+![](./img/Quality_ori.png) ![](./img/Quality10.png)
 
 ---
 
