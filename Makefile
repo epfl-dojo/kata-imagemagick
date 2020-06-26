@@ -17,7 +17,7 @@ GALLERY=adrien-olichon-iHXO2bccJcw-unsplash.jpg \
         ricardo-gomez-angel-96--kK-c5KY-unsplash.jpg
 GALFILES=$(addprefix $(GALDIR)/,$(GALLERY))
 
-PRESFILES=$(addprefix img/, CB.jpg CB_com.jpg CB_wm1.jpg CB_wm2.jpg CB_wm3.jpg dojoman.png)
+PRESFILES=$(addprefix img/, CB.jpg CB_com.jpg CB_wm1.jpg CB_wm2.jpg CB_wm3.jpg dojoman.png MM_relip.jpg)
 
 all: clean readme_reveal.html readme_beamer.pdf
 slide: clean readme_reveal.html
@@ -121,3 +121,6 @@ img/CB.jpg: images/gallery/pascal-meier-tXpD84c8ZwI-unsplash.jpg
 
 img/dojoman.png: images/dojoman.png
 	convert -resize 200x $< $@
+
+img/MM_relip.jpg: images/MarilynMonroe.jpg
+	convert $< -region 134x70+240+524 -modulate 100,100,50 -resize 200x $@

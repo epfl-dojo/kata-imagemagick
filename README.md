@@ -224,6 +224,18 @@ https://imagemagick.org/script/command-line-processing.php#geometry
 
 ---
 
+# Regions
+
+`-region geometry` can be used to change portion of the image:
+
+```
+convert MM.jpg -region 134x70+240+524 -modulate 100,100,50  MM_relip.jpg
+```
+
+![](./img/MM_relip.jpg)
+
+---
+
 options with `+` and `-` have differen mening. Example:
  
  - `-write` writes the image in the given format. The image will be available
