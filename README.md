@@ -133,6 +133,7 @@ halfsize / stupid / clever
 convert MM_square.jpg -clone 0 -clone 0  \( -clone 0 -channel RGB -negate \) \ 
   miff:- | montage - -geometry +0+0 MM_multiple.jpg
 ```
+
 https://imagemagick.org/Usage/montage/
 
 ----
@@ -158,7 +159,73 @@ https://imagemagick.org/www/script/color-management.php
 
 ---
 
+# Watermarking with `composite`
+
+![](./img/CB.jpg) + ![](./img/dojoman.png)
+
+----
+
+## Basic compositin (superposition)
+
+```
+composite -gravity south dojoman.png CB.jpg CB_com.jpg
+```
+
+![](./img/CB_com.jpg)
+
+---
+
+## Watermarking with image
+
+```
+composite -watermark 30x100 -gravity south dojoman.png CB.jpg CB_com.jpg
+composite -watermark 30x0 -gravity south dojoman.png CB.jpg CB_com.jpg
+```
+
+![](./img/CB_wm1.jpg)
+![](./img/CB_wm2.jpg)
+
+---
+
+## Watermarking with text
+
+```
+convert -background transparent -fill "#ffffff"  \
+        -font Helvetica -pointsize 240 label:"(C) EPFL-Dojo" miff:- \
+    | composite -watermark 30x100 -gravity SouthEast - CB.jpg CB_wm3.jpg        
+
+```
+
+![](./img/CB_wm3.jpg)
+
+---
+
+# Geometry: size
+ - `scale% | scale-x%xscale-y%`: 	H and W scaled by specified percentage.
+ - `width | xheight`: W or H given, keep AR
+ - `widthxheight`: max W or H, keep AR
+ - `widthxheight^`: min W or H, keep AR
+ - `widthxheight!`: exact W and H, AR ignored
+ - `widthxheight>`: shrink if larger.
+ - `widthxheight<`: enlarge if smaller
+ - `area@`: total number of pixels, keep AR
+
+---
+
+# Geometry: offset
+
+`{size}{+-}x{+-}y`
+
+ - Specifying the offset (default is `+0+0`). 
+ - Affected by `-gravity`
+ - Sign matters!
+
+https://imagemagick.org/script/command-line-processing.php#geometry
+
+---
+
 options with `+` and `-` have differen mening. Example:
+ 
  - `-write` writes the image in the given format. The image will be available
    for further processing later in the pipe
  - `+write` writes the image in the given format but duplicate the original
@@ -172,6 +239,7 @@ options with `+` and `-` have differen mening. Example:
 ## miff images
 
  - is the internal IM storage and can hold several images
+ - is normally used to pass set of images between IM commands
 
 ---
 
@@ -188,7 +256,7 @@ options with `+` and `-` have differen mening. Example:
 ---
 
 ```
-PresentazioneFFMpegImageMagick % convert -list interpolate     
+% convert -list interpolate     
 Average
 Average4	
 Average9
@@ -203,12 +271,14 @@ Nearest
 Spline
 ```
 
-
+---
 
 [FredsEffects]: http://www.fmwconcepts.com/imagemagick/index.php
 [TheColorApi]: http://www.thecolorapi.com/docs
 [colormindApi]: http://colormind.io/api-access/
+[geometry]: https://imagemagick.org/script/command-line-processing.php#geometry
+
 
 [clut]: http://www.imagemagick.org/script/command-line-options.php#clut
 [interpolate]: http://www.imagemagick.org/script/command-line-options.php#interpolate
-https://www.ibm.com/developerworks/library/l-graf/?ca=dnt-428
+[tutorial1]: https://www.ibm.com/developerworks/library/l-graf/?ca=dnt-428

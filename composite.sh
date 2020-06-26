@@ -5,14 +5,14 @@ src=images/gallery/cameron-venti-ISqTudqZERQ-unsplash.jpg
 src=images/gallery/pascal-meier-tXpD84c8ZwI-unsplash.jpg
 wmk=images/dojoman.png
 
-dir=tmp/watermark
+dir=tmp/composite
 [ -d $dir ] || mkdir -p $dir
 
 rm -f $dir/*.jpg
-composite -gravity south $wmk $src $dir/01_basic_composite.jpg
-composite -resize 25% -watermark 30x100 -gravity south $wmk $src $dir/01_watermark_30x100.jpg
-composite -resize 25% -watermark 30x0 -gravity south $wmk $src $dir/02_watermark_30x0.jpg
-composite -resize 25% -watermark 80x100 -gravity SouthEast $wmk $src $dir/03_watermark_80x100.jpg
+composite -gravity south $wmk $src $dir/00_basic_composite.jpg
+composite -watermark 30x100 -gravity south $wmk $src $dir/01_watermark_30x100.jpg
+composite -watermark 30x0 -gravity south $wmk $src $dir/02_watermark_30x0.jpg
+composite -watermark 80x100 -gravity SouthEast $wmk $src $dir/03_watermark_80x100.jpg
 
 # convert -list font
 convert -background transparent -fill "#ffffff" \
