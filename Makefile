@@ -63,10 +63,10 @@ $(GALDIR):
 	mkdir -p $@
 
 images/dojoman.png: images
-	curl -L --progress-bar -o $@ "https://upload.wikimedia.org/wikipedia/commons/4/46/Marilyn_Monroe_in_1952_TFA.jpg"
+	curl -L --progress-bar -o $@ "https://gitlab.com/epfl-dojo/dojo-design/-/raw/master/dojoman/dojoman.png"
 
 images/MarilynMonroe.jpg: images
-	curl -L --progress-bar -o $@ "https://gitlab.com/epfl-dojo/dojo-design/-/raw/master/dojoman/dojoman.png"
+	curl -L --progress-bar -o $@ "https://upload.wikimedia.org/wikipedia/commons/4/46/Marilyn_Monroe_in_1952_TFA.jpg"
 
 $(GALDIR)/adrien-olichon-iHXO2bccJcw-unsplash.jpg: $(GALDIR)
 	curl -L --progress-bar -o $@ "https://unsplash.com/photos/iHXO2bccJcw/download?force=true"
